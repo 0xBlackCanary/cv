@@ -1,8 +1,168 @@
 <!DOCTYPE html>
-<html>
-<head><title>Test</title></head>
-<body style="background: black; color: lime; font-family: monospace; padding: 50px;">
-    <h1>[ SISTEMA 0xBlackCanary ACTIVO ]</h1>
-    <p>Si puedes leer esto, la conexion es estable.</p>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — 0xBlackCanary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #060910;
+      color: #c8f0d0;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    .cv-root {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #0a0e1a;
+      border: 1px solid #1aff8c33;
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cv-root::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,100,0.015) 2px, rgba(0,255,100,0.015) 4px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cv-inner { position: relative; z-index: 1; }
+    .cv-status {
+      font-size: 11px;
+      color: #3a8c60;
+      margin-bottom: 1.5rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #1aff8c22;
+      background: #0d1a12;
+    }
+    .cv-header {
+      border-bottom: 1px solid #1aff8c55;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .cv-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1aff8c;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      text-shadow: 0 0 10px #1aff8c44;
+    }
+    .cv-title {
+      font-size: 12px;
+      color: #7ef7c0;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .cv-location {
+      font-size: 11px;
+      color: #3a8c60;
+      margin-top: 6px;
+    }
+    .cv-location::before { content: '> '; color: #1aff8c; }
+    .cv-section { margin-bottom: 1.8rem; }
+    .cv-section-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #1aff8c;
+      letter-spacing: 3px;
+      border-left: 3px solid #1aff8c;
+      padding-left: 8px;
+      margin-bottom: 0.9rem;
+      text-transform: uppercase;
+    }
+    .cv-text { color: #a0d8b8; font-size: 12px; line-height: 1.8; }
+    .cv-block {
+      border: 1px solid #1aff8c22;
+      border-left: 2px solid #1aff8c66;
+      padding: 0.6rem 0.9rem;
+      margin-bottom: 0.6rem;
+      background: #0d1a12;
+    }
+    .cv-block-title { color: #1aff8c; font-size: 12px; margin-bottom: 3px; }
+    .cv-block-sub { color: #5aaf7a; font-size: 11px; margin-bottom: 6px; }
+    .cv-block-sub::before { content: '$ '; color: #1aff8c88; }
+    .cv-bullet { color: #a0d8b8; font-size: 11px; padding-left: 16px; position: relative; margin-bottom: 3px; }
+    .cv-bullet::before { content: '→ '; color: #1aff8c; position: absolute; left: 0; }
+    .cv-tag {
+      display: inline-block;
+      background: #0d1f14;
+      border: 1px solid #1aff8c44;
+      color: #7ef7c0;
+      font-size: 10px;
+      padding: 2px 8px;
+      margin: 2px 2px 2px 0;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+    .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .cv-separator { border: none; border-top: 1px solid #1aff8c1a; margin: 1.2rem 0; }
+    .blink { animation: blink 1.2s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @media (max-width: 520px) { .cv-grid { grid-template-columns: 1fr; } .cv-name { font-size: 17px; } }
+  </style>
+</head>
+<body>
+  <div class="cv-root">
+    <div class="cv-inner">
+      <div class="cv-status">
+        [SISTEMA ACTIVO] perfil_profesional.dat — acceso público <span class="blink">█</span>
+      </div>
+      <div class="cv-header">
+        <div class="cv-name">// 0xBlackCanary</div>
+        <div class="cv-title">ESPECIALISTA EN GESTIÓN DE DATOS &amp; SOPORTE IT</div>
+        <div class="cv-title" style="color:#5aaf7a;">ASPIRANTE A ANALISTA DE CIBERSEGURIDAD</div>
+        <div class="cv-location">Alicante, España</div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-section-title">01 // Perfil</div>
+        <div class="cv-text">
+          Profesional con sólida trayectoria en gestión administrativa y tratamiento de datos, actualmente especializándome en Ciberseguridad (Nivel Junior). Experta en el ecosistema Microsoft Office y sistemas CRM, con un enfoque natural hacia la integridad de la información y la resolución de problemas técnicos.
+        </div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-section-title">02 // Stack técnico</div>
+        <div class="cv-block">
+          <div class="cv-block-title">Seguridad y Sistemas</div>
+          <span class="cv-tag">Fundamentos Ciberseguridad</span>
+          <span class="cv-tag">Protección de Datos</span>
+          <span class="cv-tag">Google Dorking</span>
+          <span class="cv-tag">Windows OS</span>
+        </div>
+        <div class="cv-block">
+          <div class="cv-block-title">Herramientas IT</div>
+          <span class="cv-tag">Excel Avanzado</span>
+          <span class="cv-tag">MS Access</span>
+          <span class="cv-tag">CRM Zoho</span>
+        </div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-section-title">03 // Experiencia y Formación</div>
+        <div class="cv-block">
+          <div class="cv-block-title">Ciberseguridad Nivel Junior — IFCT0109</div>
+          <div class="cv-block-sub">LABORA | 2026 — EN CURSO</div>
+        </div>
+        <div class="cv-block">
+          <div class="cv-block-title">EDM Promociones Deportivas</div>
+          <div class="cv-block-sub">Gestión de BBDD y Soporte | 2022</div>
+        </div>
+      </div>
+      <div class="cv-section" style="margin-bottom:0;">
+        <div class="cv-section-title">04 // Datos de interés</div>
+        <div class="cv-bullet">Discapacidad: 40% reconocida</div>
+        <div class="cv-bullet">Disponibilidad: Inmediata</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
