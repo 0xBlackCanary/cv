@@ -8,23 +8,24 @@
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
 
   :root {
-    --green: #00ff41;
-    --green-dim: #00cc33;
-    --green-dark: #004d14;
-    --blue: #00cfff;
-    --blue-dim: #0090cc;
-    --fuchsia: #ff00ff;
-    --fuchsia-dim: #cc00cc;
-    --bg: #000000;
-    --panel: #040d08;
-    --text: #00ff41;
+    /* Paleta Matrix Atenuada: Protección ocular y alto contraste ciberpunk */
+    --green: #33ff33;           /* Verde fósforo clásico equilibrado */
+    --green-dim: #1a991a;       /* Verde atenuado para textos largos y párrafos */
+    --green-dark: #004d00;      /* Verde militar oscuro para estructuras y bordes */
+    --blue: #00a3cc;            /* Azul técnico suavizado */
+    --blue-dim: #006680;        /* Azul atenuado */
+    --fuchsia: #cc00cc;         /* Fucsia de control suavizado */
+    --fuchsia-dim: #800080;     /* Fucsia oscuro */
+    --bg: #0a0f0d;              /* Fondo oscuro profundo de terminal */
+    --panel: #000000;           /* Fondo negro puro para bloques */
+    --text: #1a991a;            /* Texto base en verde confortable */
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     background: var(--bg);
-    color: var(--green);
+    color: var(--green-dim);
     font-family: 'Share Tech Mono', monospace;
     font-size: 14px;
     line-height: 1.7;
@@ -39,8 +40,8 @@
       0deg,
       transparent,
       transparent 2px,
-      rgba(0,255,65,0.025) 2px,
-      rgba(0,255,65,0.025) 4px
+      rgba(51,255,51,0.015) 2px,
+      rgba(51,255,51,0.015) 4px
     );
     pointer-events: none;
     z-index: 9999;
@@ -48,7 +49,7 @@
 
   /* HEADER */
   header {
-    background: #000;
+    background: #000000;
     border-bottom: 2px solid var(--fuchsia);
     padding: 40px 40px 28px;
     position: relative;
@@ -95,7 +96,7 @@
     font-size: clamp(20px, 3.5vw, 36px);
     font-weight: 900;
     color: var(--green);
-    text-shadow: 0 0 8px var(--green), 0 0 25px var(--green-dim);
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.4);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 6px;
@@ -105,7 +106,7 @@
     color: var(--blue);
     font-size: 13px;
     letter-spacing: 3px;
-    text-shadow: 0 0 6px var(--blue);
+    text-shadow: 0 0 4px rgba(0, 163, 204, 0.3);
   }
 
   .header-meta {
@@ -137,7 +138,7 @@
     letter-spacing: 2px;
     padding: 3px 10px;
     margin-top: 8px;
-    text-shadow: 0 0 6px var(--green);
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.3);
   }
 
   /* LAYOUT */
@@ -150,6 +151,21 @@
     gap: 30px;
   }
 
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+    .header-inner {
+      grid-template-columns: 1fr;
+    }
+    .header-meta {
+      text-align: left;
+    }
+    .header-meta .meta-item {
+      justify-content: flex-start;
+    }
+  }
+
   /* SECTION */
   .section {
     margin-bottom: 30px;
@@ -160,30 +176,30 @@
     font-size: 13px;
     font-weight: 700;
     color: var(--fuchsia);
-    text-shadow: 0 0 8px var(--fuchsia);
+    text-shadow: 0 0 4px rgba(204, 0, 204, 0.4);
     letter-spacing: 3px;
     text-transform: uppercase;
     border-left: 3px solid var(--fuchsia);
     padding: 6px 0 6px 14px;
     margin-bottom: 16px;
-    background: linear-gradient(90deg, rgba(255,0,255,0.06) 0%, transparent 60%);
+    background: linear-gradient(90deg, rgba(204,0,204,0.04) 0%, transparent 60%);
   }
 
   /* PERFIL */
   .perfil-box {
-    background: #000508;
+    background: var(--panel);
     border: 1px solid var(--blue);
     border-left: 3px solid var(--blue);
     padding: 16px 18px;
     color: var(--blue);
     font-size: 13px;
     line-height: 1.8;
-    box-shadow: inset 0 0 12px rgba(0,207,255,0.04);
+    box-shadow: inset 0 0 12px rgba(0,163,255,0.02);
   }
 
   /* EXPERIENCIA */
   .exp-item {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     padding-left: 16px;
     border-left: 2px solid var(--green-dark);
     position: relative;
@@ -195,14 +211,14 @@
     left: -5px; top: 6px;
     width: 8px; height: 8px;
     background: var(--green);
-    box-shadow: 0 0 6px var(--green);
+    box-shadow: 0 0 4px var(--green);
   }
 
   .exp-company {
     font-family: 'Orbitron', monospace;
     font-size: 13px;
     color: var(--green);
-    text-shadow: 0 0 5px var(--green-dim);
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.3);
     font-weight: 700;
     letter-spacing: 1px;
   }
@@ -220,9 +236,9 @@
   }
 
   .exp-tasks li {
-    color: var(--green);
+    color: var(--green-dim);
     font-size: 12px;
-    padding: 2px 0;
+    padding: 3px 0;
     padding-left: 14px;
     position: relative;
   }
@@ -237,8 +253,8 @@
 
   /* FORMACION */
   .form-item {
-    background: #000508;
-    border: 1px solid #00ff4122;
+    background: var(--panel);
+    border: 1px solid rgba(51, 255, 51, 0.05);
     border-left: 3px solid var(--green);
     padding: 12px 14px;
     margin-bottom: 12px;
@@ -260,13 +276,12 @@
 
   .form-highlight {
     display: inline-block;
-    background: rgba(0,255,65,0.08);
-    border: 1px solid var(--green);
+    background: rgba(51,255,65,0.04);
+    border: 1px solid var(--green-dim);
     color: var(--green);
     font-size: 10px;
     padding: 2px 8px;
     margin-top: 6px;
-    text-shadow: 0 0 5px var(--green);
     letter-spacing: 1px;
   }
 
@@ -286,7 +301,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 6px;
-    text-shadow: 0 0 5px var(--blue);
+    text-shadow: 0 0 4px rgba(0, 163, 204, 0.3);
   }
 
   .skill-tags {
@@ -296,20 +311,21 @@
   }
 
   .tag {
-    border: 1px solid var(--blue);
+    border: 1px solid var(--blue-dim);
     color: var(--blue);
     font-size: 10px;
     padding: 3px 9px;
     letter-spacing: 1px;
+    background: var(--panel);
   }
 
   .tag.green {
-    border-color: var(--green);
-    color: var(--green);
+    border-color: var(--green-dark);
+    color: var(--green-dim);
   }
 
   .tag.fuchsia {
-    border-color: var(--fuchsia);
+    border-color: var(--fuchsia-dim);
     color: var(--fuchsia);
   }
 
@@ -320,22 +336,23 @@
     align-items: flex-start;
     margin-bottom: 10px;
     font-size: 12px;
-    color: var(--green);
+    color: var(--green-dim);
   }
 
   .soft-icon {
     width: 14px; height: 14px;
-    border: 1px solid var(--fuchsia);
+    border: 1px solid var(--fuchsia-dim);
     flex-shrink: 0;
     margin-top: 2px;
     position: relative;
+    background: var(--panel);
   }
 
   .soft-icon::after {
     content: '';
     position: absolute;
     top: 2px; left: 2px; right: 2px; bottom: 2px;
-    background: var(--fuchsia);
+    background: var(--fuchsia-dim);
   }
 
   /* IDIOMAS */
@@ -347,7 +364,7 @@
     font-size: 12px;
   }
 
-  .lang-name { color: var(--green); }
+  .lang-name { color: var(--green-dim); }
 
   .lang-level {
     display: flex;
@@ -356,15 +373,15 @@
 
   .lang-dot {
     width: 8px; height: 8px;
-    border: 1px solid var(--green);
+    border: 1px solid var(--green-dark);
   }
 
-  .lang-dot.filled { background: var(--green); box-shadow: 0 0 4px var(--green); }
+  .lang-dot.filled { background: var(--green-dim); }
 
   /* DATOS */
   .dato-item {
-    background: #000508;
-    border: 1px solid #00ff4122;
+    background: var(--panel);
+    border: 1px solid rgba(51, 255, 51, 0.05);
     padding: 10px 12px;
     margin-bottom: 8px;
     font-size: 12px;
@@ -379,24 +396,13 @@
   }
 
   .dato-value {
-    color: var(--green);
-    text-shadow: 0 0 4px var(--green-dim);
-  }
-
-  .dato-discap {
-    background: rgba(255,0,255,0.05);
-    border-color: var(--fuchsia);
-  }
-
-  .dato-discap .dato-value {
-    color: var(--fuchsia);
-    text-shadow: 0 0 4px var(--fuchsia-dim);
+    color: var(--green-dim);
   }
 
   /* DIVIDER */
   .divider {
     border: none;
-    border-top: 1px solid #00ff4122;
+    border-top: 1px solid rgba(51, 255, 51, 0.05);
     margin: 24px 0;
   }
 
@@ -404,220 +410,39 @@
   footer {
     text-align: center;
     padding: 20px 40px;
-    border-top: 1px solid #00ff4122;
-    color: #004d14;
+    border-top: 1px solid rgba(51, 255, 51, 0.05);
+    color: var(--green-dark);
     font-size: 11px;
     letter-spacing: 2px;
-  }
-
-  @media (max-width: 700px) {
-    .container { grid-template-columns: 1fr; padding: 20px; }
-    .header-inner { grid-template-columns: 1fr; }
-    .header-meta { text-align: left; }
+    background: #000000;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div>
-      <div class="header-badge">Currículum Vitae · 2026</div>
-      <h1>Profesional<br>en Ciberseguridad</h1>
-      <p class="header-title">JUNIOR CYBERSECURITY · GESTIÓN DE DATOS · ADMINISTRACIÓN</p>
-    </div>
-    <div class="header-meta">
-      <div class="meta-item"><span class="meta-dot"></span> Alicante, España</div>
-      <div class="meta-item"><span class="meta-dot"></span> Windows OS · Microsoft Office</div>
-      <div class="meta-item"><span class="meta-dot"></span> CRM Zoho · Protección de Datos</div>
-      <div class="avail-badge">[ DISPONIBILIDAD INMEDIATA ]</div>
-    </div>
-  </div>
-</header>
-
-<div class="container">
-
-  <!-- COLUMNA PRINCIPAL -->
-  <main>
-
-    <!-- PERFIL -->
-    <div class="section">
-      <div class="section-title">[01] Perfil Profesional</div>
-      <div class="perfil-box">
-        Profesional con sólida trayectoria en gestión administrativa y tratamiento de datos, actualmente especializándome en <strong style="color:var(--green);text-shadow:0 0 5px var(--green);">Ciberseguridad (Nivel Junior)</strong>. Experta en el ecosistema Microsoft Office y sistemas CRM, con un enfoque natural hacia la integridad de la información y la resolución de problemas técnicos.<br><br>
-        Aporto una visión diferencial: la experiencia en auditoría documental y gestión de datos sensibles me ha formado con una mentalidad de seguridad antes de estudiarla formalmente. Busco aplicar mis competencias en digitalización y seguridad de datos en un entorno tecnológico dinámico.
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="header-badge">SecOps Node Active</div>
+        <h1>0xBlackCanary</h1>
+        <div class="header-title">🛡 JUNIOR CYBERSECURITY · GESTIÓN DE DATOS · ADMINISTRACIÓN</div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-item"><span class="meta-dot"></span> Alicante, España</div>
+        <div class="meta-item"><span class="meta-dot"></span> Core OS: Windows & Linux Environment</div>
+        <div class="avail-badge">[ DISPONIBILIDAD INMEDIATA ]</div>
       </div>
     </div>
+  </header>
 
-    <!-- EXPERIENCIA -->
-    <div class="section">
-      <div class="section-title">[02] Experiencia Laboral</div>
-
-      <div class="exp-item">
-        <div>
-          <span class="exp-company">EDM Promociones Deportivas</span>
-          <span class="exp-year">2022</span>
-        </div>
-        <ul class="exp-tasks">
-          <li>Optimización de flujos de trabajo mediante aplicaciones ofimáticas avanzadas y gestión de comunicaciones internas.</li>
-          <li>Administración y mantenimiento preventivo de bases de datos comerciales.</li>
-        </ul>
-      </div>
-
-      <div class="exp-item">
-        <div>
-          <span class="exp-company">Ferrovial / Universidad de Alicante</span>
-          <span class="exp-year">2020</span>
-        </div>
-        <ul class="exp-tasks">
-          <li>Gestión de expedientes digitales y aseguramiento de la integridad de los datos procesados.</li>
-          <li>Soporte administrativo multifuncional en entornos académicos de alta demanda.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- FORMACION -->
-    <div class="section">
-      <div class="section-title">[03] Formación</div>
-
-      <div class="form-item">
-        <div class="form-title">Curso de Especialización: Ciberseguridad Nivel Junior</div>
-        <div class="form-meta">Labora &amp; Grupo ATU · IFCT0109: Seguridad Informática</div>
-        <div class="form-highlight">EN CURSO · 2026</div>
-      </div>
-
-      <div class="form-item">
-        <div class="form-title">C.P. Actividades Administrativas y Relación con el Cliente <span style="color:var(--fuchsia);font-size:11px;">(800h)</span></div>
-        <div class="form-meta">LABORA · 2022</div>
-      </div>
-
-      <div class="form-item">
-        <div class="form-title">C.P. Operaciones de Grabación y Tratamiento de Datos <span style="color:var(--fuchsia);font-size:11px;">(480h)</span></div>
-        <div class="form-meta">LABORA · 2019</div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <!-- COMPETENCIAS -->
-    <div class="section">
-      <div class="section-title">[·] Skills</div>
-
-      <div class="skill-block">
-        <div class="skill-label">Seguridad &amp; Sistemas</div>
-        <div class="skill-tags">
-          <span class="tag fuchsia">Ciberseguridad</span>
-          <span class="tag fuchsia">Protección de Datos</span>
-          <span class="tag fuchsia">IAM básica</span>
-          <span class="tag fuchsia">Windows OS</span>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-label">Software &amp; Herramientas</div>
-        <div class="skill-tags">
-          <span class="tag green">MS Excel avanzado</span>
-          <span class="tag green">MS Access</span>
-          <span class="tag green">CRM Zoho</span>
-          <span class="tag green">Microsoft Office</span>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-label">Gestión de Información</div>
-        <div class="skill-tags">
-          <span class="tag">Digitalización</span>
-          <span class="tag">BBDD</span>
-          <span class="tag">Auditoría</span>
-          <span class="tag">Normalización</span>
-        </div>
-      </div>
-    </div>
-
-    <hr class="divider">
-
-    <!-- SOFT SKILLS -->
-    <div class="section">
-      <div class="section-title">[·] Soft Skills</div>
-      <div class="soft-item">
-        <div class="soft-icon"></div>
-        <span>Capacidad analítica para la detección de anomalías</span>
-      </div>
-      <div class="soft-item">
-        <div class="soft-icon"></div>
-        <span>Atención al detalle en la integridad de datos</span>
-      </div>
-      <div class="soft-item">
-        <div class="soft-icon"></div>
-        <span>Resolución de problemas técnicos</span>
-      </div>
-      <div class="soft-item">
-        <div class="soft-icon"></div>
-        <span>Adaptabilidad a entornos de alta demanda</span>
-      </div>
-    </div>
-
-    <hr class="divider">
-
-    <!-- IDIOMAS -->
-    <div class="section">
-      <div class="section-title">[·] Idiomas</div>
-      <div class="lang-item">
-        <span class="lang-name">Español</span>
-        <div class="lang-level">
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-        </div>
-      </div>
-      <div style="font-size:10px;color:var(--fuchsia);margin-bottom:12px;letter-spacing:1px;">Nativo</div>
-
-      <div class="lang-item">
-        <span class="lang-name">Inglés</span>
-        <div class="lang-level">
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot filled"></div>
-          <div class="lang-dot"></div>
-          <div class="lang-dot"></div>
-          <div class="lang-dot"></div>
-        </div>
-      </div>
-      <div style="font-size:10px;color:var(--fuchsia);margin-bottom:12px;letter-spacing:1px;">Certificado A2</div>
-    </div>
-
-    <hr class="divider">
-
-    <!-- DATOS DE INTERÉS -->
-    <div class="section">
-      <div class="section-title">[·] Datos</div>
-
-      <div class="dato-item">
-        <div class="dato-label">Incorporación</div>
-        <div class="dato-value">Inmediata</div>
-      </div>
-
-      <div class="dato-item">
-        <div class="dato-label">Movilidad</div>
-        <div class="dato-value">Alicante</div>
-      </div>
-
-      <div class="dato-item dato-discap">
-        <div class="dato-label">Grado de Discapacidad</div>
-        <div class="dato-value">40% — Candidatura bonificada</div>
-      </div>
-    </div>
-
-  </aside>
-</div>
-
-<footer>
-  [ ALICANTE · ESPAÑA · 2026 ]
-</footer>
-
-</body>
-</html>
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+    
+    <!-- MAIN COLUMN -->
+    <main>
+      
+      <!-- PERFIL -->
+      <section class="section">
+        <div class="section-title">[01] Perfil Profesional</div>
+        <div class="perfil-box">
