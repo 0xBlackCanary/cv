@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Currículum Vitae — Cybersecurity Professional</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+  @import url('https://googleapis.com');
 
   :root {
-    /* Paleta Matrix Atenuada: Protección ocular y alto contraste ciberpunk */
-    --green: #33ff33;           /* Verde fósforo clásico equilibrado */
-    --green-dim: #1a991a;       /* Verde atenuado para textos largos y párrafos */
-    --green-dark: #004d00;      /* Verde militar oscuro para estructuras y bordes */
-    --blue: #00a3cc;            /* Azul técnico suavizado */
-    --blue-dim: #006680;        /* Azul atenuado */
-    --fuchsia: #cc00cc;         /* Fucsia de control suavizado */
-    --fuchsia-dim: #800080;     /* Fucsia oscuro */
-    --bg: #0a0f0d;              /* Fondo oscuro profundo de terminal */
-    --panel: #000000;           /* Fondo negro puro para bloques */
-    --text: #1a991a;            /* Texto base en verde confortable */
+    /* Ajuste de frecuencias visuales Matrix para descanso de la vista */
+    --green: #33ff33;           
+    --green-dim: #1a991a;       
+    --green-dark: #004d00;      
+    --blue: #00a3cc;            
+    --blue-dim: #006680;        
+    --fuchsia: #cc00cc;         
+    --fuchsia-dim: #800080;     
+    --bg: #0a0f0d;              
+    --panel: #000000;           
+    --text: #1a991a;            
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,14 +40,13 @@
       0deg,
       transparent,
       transparent 2px,
-      rgba(51,255,51,0.015) 2px,
-      rgba(51,255,51,0.015) 4px
+      rgba(51,255,51,0.01) 2px,
+      rgba(51,255,51,0.01) 4px
     );
     pointer-events: none;
     z-index: 9999;
   }
 
-  /* HEADER */
   header {
     background: #000000;
     border-bottom: 2px solid var(--fuchsia);
@@ -106,7 +105,6 @@
     color: var(--blue);
     font-size: 13px;
     letter-spacing: 3px;
-    text-shadow: 0 0 4px rgba(0, 163, 204, 0.3);
   }
 
   .header-meta {
@@ -138,10 +136,8 @@
     letter-spacing: 2px;
     padding: 3px 10px;
     margin-top: 8px;
-    text-shadow: 0 0 4px rgba(51, 255, 51, 0.3);
   }
 
-  /* LAYOUT */
   .container {
     max-width: 900px;
     margin: 0 auto;
@@ -152,24 +148,13 @@
   }
 
   @media (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
-    .header-inner {
-      grid-template-columns: 1fr;
-    }
-    .header-meta {
-      text-align: left;
-    }
-    .header-meta .meta-item {
-      justify-content: flex-start;
-    }
+    .container { grid-template-columns: 1fr; }
+    .header-inner { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+    .header-meta .meta-item { justify-content: flex-start; }
   }
 
-  /* SECTION */
-  .section {
-    margin-bottom: 30px;
-  }
+  .section { margin-bottom: 30px; }
 
   .section-title {
     font-family: 'Orbitron', monospace;
@@ -185,7 +170,6 @@
     background: linear-gradient(90deg, rgba(204,0,204,0.04) 0%, transparent 60%);
   }
 
-  /* PERFIL */
   .perfil-box {
     background: var(--panel);
     border: 1px solid var(--blue);
@@ -194,10 +178,8 @@
     color: var(--blue);
     font-size: 13px;
     line-height: 1.8;
-    box-shadow: inset 0 0 12px rgba(0,163,255,0.02);
   }
 
-  /* EXPERIENCIA */
   .exp-item {
     margin-bottom: 24px;
     padding-left: 16px;
@@ -218,7 +200,6 @@
     font-family: 'Orbitron', monospace;
     font-size: 13px;
     color: var(--green);
-    text-shadow: 0 0 4px rgba(51, 255, 51, 0.3);
     font-weight: 700;
     letter-spacing: 1px;
   }
@@ -230,10 +211,7 @@
     margin-left: 10px;
   }
 
-  .exp-tasks {
-    list-style: none;
-    margin-top: 6px;
-  }
+  .exp-tasks { list-style: none; margin-top: 6px; }
 
   .exp-tasks li {
     color: var(--green-dim);
@@ -251,7 +229,6 @@
     font-size: 11px;
   }
 
-  /* FORMACION */
   .form-item {
     background: var(--panel);
     border: 1px solid rgba(51, 255, 51, 0.05);
@@ -285,15 +262,7 @@
     letter-spacing: 1px;
   }
 
-  /* SIDEBAR */
-  .sidebar .section {
-    margin-bottom: 24px;
-  }
-
-  /* COMPETENCIAS */
-  .skill-block {
-    margin-bottom: 14px;
-  }
+  .skill-block { margin-bottom: 14px; }
 
   .skill-label {
     color: var(--blue);
@@ -301,14 +270,9 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 6px;
-    text-shadow: 0 0 4px rgba(0, 163, 204, 0.3);
   }
 
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
   .tag {
     border: 1px solid var(--blue-dim);
@@ -319,17 +283,9 @@
     background: var(--panel);
   }
 
-  .tag.green {
-    border-color: var(--green-dark);
-    color: var(--green-dim);
-  }
+  .tag.green { border-color: var(--green-dark); color: var(--green-dim); }
+  .tag.fuchsia { border-color: var(--fuchsia-dim); color: var(--fuchsia); }
 
-  .tag.fuchsia {
-    border-color: var(--fuchsia-dim);
-    color: var(--fuchsia);
-  }
-
-  /* SOFT SKILLS */
   .soft-item {
     display: flex;
     gap: 10px;
@@ -355,7 +311,6 @@
     background: var(--fuchsia-dim);
   }
 
-  /* IDIOMAS */
   .lang-item {
     display: flex;
     justify-content: space-between;
@@ -365,20 +320,10 @@
   }
 
   .lang-name { color: var(--green-dim); }
-
-  .lang-level {
-    display: flex;
-    gap: 4px;
-  }
-
-  .lang-dot {
-    width: 8px; height: 8px;
-    border: 1px solid var(--green-dark);
-  }
-
+  .lang-level { display: flex; gap: 4px; }
+  .lang-dot { width: 8px; height: 8px; border: 1px solid var(--green-dark); }
   .lang-dot.filled { background: var(--green-dim); }
 
-  /* DATOS */
   .dato-item {
     background: var(--panel);
     border: 1px solid rgba(51, 255, 51, 0.05);
@@ -395,18 +340,8 @@
     margin-bottom: 3px;
   }
 
-  .dato-value {
-    color: var(--green-dim);
-  }
+  .dato-value { color: var(--green-dim); }
 
-  /* DIVIDER */
-  .divider {
-    border: none;
-    border-top: 1px solid rgba(51, 255, 51, 0.05);
-    margin: 24px 0;
-  }
-
-  /* FOOTER */
   footer {
     text-align: center;
     padding: 20px 40px;
@@ -444,5 +379,147 @@
       
       <!-- PERFIL -->
       <section class="section">
-        <div class="section-title">[01] Perfil Profesional</div>
+        <div class="section-title"> Perfil Profesional</div>
         <div class="perfil-box">
+          Profesional con sólida trayectoria en gestión administrativa y tratamiento avanzado de datos, actualmente especializada en Ciberseguridad (Nivel Junior). Experta en el ecosistema Microsoft Office y sistemas CRM, con un enfoque natural hacia la integridad de la información, el bastionado de endpoints y la resolución ágil de anomalías técnicas.
+          <br><br>
+          Aporto una visión diferencial basada en la Defensa en Profundidad: la experiencia previa en auditoría documental y control de flujos de información sensible me ha dotado de una mentalidad de seguridad nativa. Capacitada para mitigar vectores de riesgo lógico, aplicar políticas criptográficas y asegurar el cumplimiento normativo (RGPD) en entornos tecnológicos cambiantes.
+        </div>
+      </section>
+
+      <!-- EXPERIENCIA -->
+      <section class="section">
+        <div class="section-title"> Experiencia Tecnológica y FCT</div>
+        
+        <div class="exp-item">
+          <span class="exp-company">Analista de Ciberseguridad Junior (FCT) — Iniciativas de Apoyo a Minorías Sociales (ONG)</span>
+          <span class="exp-year">2026</span>
+          <ul class="exp-tasks">
+            <li><strong>Auditoría Pasiva y OSINT:</strong> Ejecución de reconocimientos perimetrales de caja negra sobre la infraestructura web de la entidad mediante fuentes abiertas, mitigando fugas críticos de metadatos en servidores y brechas legales.</li>
+            <li><strong>Hardening Perimetral y Wi-Fi:</strong> Acceso a consolas core para la neutralización del protocolo vulnerable WPS, renovación de credenciales genéricas y fortificación del perímetro inalámbrico corporativo.</li>
+            <li><strong>Mitigación Rogue DHCP & Economía Circular:</strong> Reacondicionamiento de enrutadores en desuso (ZTE) transformándolos con coste cero en switches de Capa 2 y Puntos de Acceso securizados, inhabilitando servidores DHCP locales para suprimir colisiones de red o suplantaciones.</li>
+            <li><strong>Endpoint Hardening & Privacidad:</strong> Despliegue de instalaciones limpias de Windows 11 Pro en hardware recuperado, aislamiento de entornos PowerShell para ejecución segura de scripts y purga estricta de telemetría y diagnóstico para preservar la confidencialidad de datos internos.</li>
+            <li><strong>Sanitización de Datos (RGPD):</strong> Retirada, triaje y aislamiento físico de soportes magnéticos legacy en desuso, aplicando técnicas de sobreescritura de bits (Zero-fill) para garantizar la destrucción segura de datos sensibles.</li>
+            <li><strong>Garantía de No Repudio:</strong> Redacción y entrega en mano de informes técnicos consolidados y planes de migración criptográfica a Google Workspace (SPF, DKIM, DMARC), implementando un enfoque dual (físico y digital).</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <span class="exp-company">EDM Promociones Deportivas</span>
+          <span class="exp-year">2022</span>
+          <ul class="exp-tasks">
+            <li>Optimización de flujos de trabajo internos mediante la arquitectura de aplicaciones ofimáticas avanzadas y estructuración de canales de comunicación corporativa.</li>
+            <li>Administración, control de calidad y mantenimiento preventivo de bases de datos de naturaleza comercial.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <span class="exp-company">Ferrovial / Universidad de Alicante</span>
+          <span class="exp-year">2020</span>
+          <ul class="exp-tasks">
+            <li>Gestión avanzada de expedientes digitales complejos y aseguramiento estricto de la integridad de los datos procesados en sistemas de información académica.</li>
+            <li>Soporte técnico y administrativo multifuncional en entornos corporativos y educativos de alta demanda organizativa.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FORMACIÓN -->
+      <section class="section">
+        <div class="section-title"> Formación y Certificaciones</div>
+        
+        <div class="form-item">
+          <div class="form-title">Curso de Especialización: Ciberseguridad Nivel Junior</div>
+          <div class="form-meta">Labora & Grupo ATU · Especialidad IFCT0109: Seguridad Informática | 2026</div>
+          <span class="form-highlight">EN CURSO</span>
+        </div>
+
+        <div class="form-item">
+          <div class="form-title">Certificación Oficial: Piloto a Distancia de UAS (Categoría Abierta - Subcategorías A1/A3)</div>
+          <div class="form-meta">Agencia Estatal de Seguridad Aérea (AESA) / EASA framework | 2026</div>
+          <span class="form-highlight">OPERATIVA</span>
+        </div>
+
+        <div class="form-item">
+          <div class="form-title">C.P. Actividades Administrativas y Relación con el Cliente (800h)</div>
+          <div class="form-meta">LABORA | 2022</div>
+        </div>
+
+        <div class="form-item">
+          <div class="form-title">C.P. Operaciones de Grabación y Tratamiento de Datos (480h)</div>
+          <div class="form-meta">LABORA | 2019</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SIDEBAR COLUMN -->
+    <aside class="sidebar">
+      <section class="section">
+        <div class="section-title">🛡 Stack</div>
+        
+        <div class="skill-block">
+          <div class="skill-label">Seguridad</div>
+          <div class="skill-tags">
+            <span class="tag fuchsia">OSINT</span>
+            <span class="tag fuchsia">Dorking</span>
+            <span class="tag fuchsia">Hardening</span>
+            <span class="tag fuchsia">RGPD</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-label">Software</div>
+          <div class="skill-tags">
+            <span class="tag">Excel</span>
+            <span class="tag">SQL</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">🧠 Conducta</div>
+        <div class="soft-item">
+          <div class="soft-icon"></div>
+          <span>Análisis lógico avanzado.</span>
+        </div>
+        <div class="soft-item">
+          <div class="soft-icon"></div>
+          <span>Atención al detalle estructural.</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">📡 Idiomas</div>
+        <div class="lang-item">
+          <span class="lang-name">Castellano</span>
+          <div class="lang-level">
+            <span class="lang-dot filled"></span>
+            <span class="lang-dot filled"></span>
+            <span class="lang-dot filled"></span>
+            <span class="lang-dot filled"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">📊 Endpoint</div>
+        <div class="dato-item">
+          <div class="dato-label">Ubicación</div>
+          <div class="dato-value">Alicante, ES</div>
+        </div>
+        <div class="dato-item">
+          <div class="dato-label">Disponibilidad</div>
+          <div class="dato-value">Inmediata</div>
+        </div>
+      </section>
+    </aside>
+
+  </div>
+
+  <footer>
+    [ 0xBlackCanary // NODE_ID: UNKNOWN // STATUS: ACTIVE // 2026 ]
+  </footer>
+
+</body>
+</html>
